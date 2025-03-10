@@ -11,3 +11,55 @@ title: Projects
     <a href="#">View Project</a>
   </div>
 </div>
+
+<section class="illustrations-section">
+  <h2>Illustrations</h2>
+  
+  <div class="gallery">
+    <div class="gallery-item" onclick="openLightbox('/assets/hack.png')">
+      <img src="/assets/hack.png" alt="Illustration 1">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('/assets/haunter.png')">
+      <img src="/assets/haunter.png" alt="Illustration 2">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('/assets/octo.png')">
+      <img src="/assets/octo.png" alt="Illustration 3">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('/assets/steen.png')">
+      <img src="/assets/steen.png" alt="Illustration 4">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('/assets/wooper.jpg')">
+      <img src="/assets/wooper.jpg" alt="Illustration 5">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('illustration6.jpg')">
+      <img src="https://via.placeholder.com/300x300" alt="Illustration 6">
+    </div>
+  </div>
+  
+  <!-- Lightbox Container -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-button" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" class="lightbox-content">
+  </div>
+</section>
+
+<script>
+  function openLightbox(imageSrc) {
+    // For demo purposes, using placeholder
+    document.getElementById('lightbox-img').src = imageSrc;
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Close lightbox when clicking outside the image
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeLightbox();
+    }
+  });
+</script>
