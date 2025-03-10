@@ -389,13 +389,6 @@ img::before {
 
 /* Add this to your style.css file */
 
-/* Yellowish off-white background */
-body {
-  background-color: #f7f3e3;
-  position: relative;
-  overflow-x: hidden;
-}
-
 /* Lava lamp container */
 .lava-lamp-background {
   position: fixed;
@@ -538,19 +531,4 @@ main {
   border-radius: 10px;
   padding: 20px;
   margin: 20px 0;
-}
-
-/* Ensure nav and header are readable */
-header {
-  position: relative;
-  z-index: 2;
-  background-color: rgba(247, 243, 227, 0.7);
-  backdrop-filter: blur(5px);
-}
-
-footer {
-  position: relative;
-  z-index: 2;
-  background-color: rgba(247, 243, 227, 0.7);
-  backdrop-filter: blur(5px);
 }
