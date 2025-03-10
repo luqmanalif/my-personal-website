@@ -172,3 +172,385 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Add this to your existing style.css file */
+
+/* CRT and Fisheye Container */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 1000;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+  opacity: 0.15;
+}
+
+/* Fisheye Effect Wrapper */
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  transform: perspective(1000px) rotateX(2deg);
+  border-radius: 5px;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* CRT Screen Glow */
+body {
+  box-shadow: 0 0 10px rgba(37, 255, 97, 0.1) inset;
+  animation: textShadow 1.6s infinite;
+}
+
+/* CRT Flicker Animation */
+@keyframes flicker {
+  0% {
+    opacity: 0.17861;
+  }
+  5% {
+    opacity: 0.11769;
+  }
+  10% {
+    opacity: 0.13604;
+  }
+  15% {
+    opacity: 0.10978;
+  }
+  20% {
+    opacity: 0.15347;
+  }
+  25% {
+    opacity: 0.12876;
+  }
+  30% {
+    opacity: 0.18136;
+  }
+  35% {
+    opacity: 0.14376;
+  }
+  40% {
+    opacity: 0.25378;
+  }
+  45% {
+    opacity: 0.18266;
+  }
+  50% {
+    opacity: 0.21437;
+  }
+  55% {
+    opacity: 0.15234;
+  }
+  60% {
+    opacity: 0.18271;
+  }
+  65% {
+    opacity: 0.19864;
+  }
+  70% {
+    opacity: 0.12751;
+  }
+  75% {
+    opacity: 0.11726;
+  }
+  80% {
+    opacity: 0.10983;
+  }
+  85% {
+    opacity: 0.11983;
+  }
+  90% {
+    opacity: 0.27975;
+  }
+  95% {
+    opacity: 0.19751;
+  }
+  100% {
+    opacity: 0.11854;
+  }
+}
+
+/* Text Shadow Animation for CRT effect */
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 0.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 1.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 1.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 1.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 1.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 1.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 1.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+}
+
+/* More pronounced fisheye effect for content */
+.hero, .intro, .projects-grid, .illustrations-section, .lightbox-content {
+  border-radius: 5px;
+  transform: perspective(800px) rotateX(2deg);
+  transition: all 0.3s ease;
+}
+
+/* Optional: Add vignette effect to enhance CRT look */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 200px rgba(0,0,0,0.6) inset;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Additional color distortion for CRT effect */
+img {
+  position: relative;
+}
+
+img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 16, 16, 0.1);
+  z-index: 2;
+}
+
+/* Add this to your style.css file */
+
+/* Yellowish off-white background */
+body {
+  background-color: #f7f3e3;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Lava lamp container */
+.lava-lamp-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+/* Lava blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(15px);
+  mix-blend-mode: screen;
+  opacity: 0.7;
+  transform: translateY(100%);
+  animation-name: float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Blob 1 - Coral Pink */
+.blob:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 135, 157, 0.7);
+  left: 15%;
+  animation-duration: 15s;
+  animation-delay: 0s;
+}
+
+/* Blob 2 - Light Blue */
+.blob:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(135, 206, 250, 0.7);
+  left: 40%;
+  animation-duration: 18s;
+  animation-delay: 2s;
+}
+
+/* Blob 3 - Soft Yellow */
+.blob:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 223, 126, 0.7);
+  left: 65%;
+  animation-duration: 20s;
+  animation-delay: 1s;
+}
+
+/* Blob 4 - Light Purple */
+.blob:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(188, 143, 255, 0.7);
+  left: 25%;
+  animation-duration: 22s;
+  animation-delay: 4s;
+}
+
+/* Blob 5 - Mint Green */
+.blob:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  background-color: rgba(152, 255, 178, 0.7);
+  left: 50%;
+  animation-duration: 25s;
+  animation-delay: 0s;
+}
+
+/* Blob 6 - Light Cyan */
+.blob:nth-child(6) {
+  width: 130px;
+  height: 130px;
+  background-color: rgba(126, 255, 247, 0.7);
+  left: 75%;
+  animation-duration: 19s;
+  animation-delay: 3s;
+}
+
+/* Blob 7 - Light Pink */
+.blob:nth-child(7) {
+  width: 110px;
+  height: 110px;
+  background-color: rgba(255, 178, 217, 0.7);
+  left: 5%;
+  animation-duration: 21s;
+  animation-delay: 5s;
+}
+
+/* Blob 8 - Pale Orange */
+.blob:nth-child(8) {
+  width: 140px;
+  height: 140px;
+  background-color: rgba(255, 191, 135, 0.7);
+  left: 85%;
+  animation-duration: 23s;
+  animation-delay: 2s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(110%) scale(1);
+  }
+  50% {
+    transform: translateY(30%) scale(1.1);
+  }
+  100% {
+    transform: translateY(-30%) scale(1);
+  }
+}
+
+/* Add grain texture to entire page */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Make content readable over floating blobs */
+main {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(247, 243, 227, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Ensure nav and header are readable */
+header {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(247, 243, 227, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(247, 243, 227, 0.7);
+  backdrop-filter: blur(5px);
+}
