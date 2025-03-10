@@ -387,7 +387,25 @@ img::before {
   z-index: 2;
 }
 
-/* Add this to your style.css file */
+/* Updated lava lamp styles for your style.css file */
+
+/* Keep the white background */
+body {
+  background-color: white;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh; /* Ensure full height for background effects */
+}
+
+/* Refined lava lamp styles for your style.css file */
+
+/* Keep the white background */
+body {
+  background-color: white;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh; /* Ensure full height for background effects */
+}
 
 /* Lava lamp container */
 .lava-lamp-background {
@@ -397,118 +415,97 @@ img::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.6;
+  opacity: 0.7;
   pointer-events: none;
-  filter: blur(40px);
+  filter: blur(70px); /* Increased blur for even softer edges */
+  overflow: hidden;
+  display: block !important;
 }
 
 /* Lava blobs */
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(15px);
-  mix-blend-mode: screen;
-  opacity: 0.7;
-  transform: translateY(100%);
-  animation-name: float;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  filter: blur(25px);
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+  transition: opacity 1s ease-in-out; /* Add transition for opacity changes */
 }
 
-/* Blob 1 - Coral Pink */
-.blob:nth-child(1) {
-  width: 100px;
-  height: 100px;
-  background-color: rgba(219, 57, 87, 0.7);
-  left: 15%;
-  animation-duration: 15s;
-  animation-delay: 0s;
-}
+/* Refined pastel colors for a prettier, more elegant effect */
+.blob:nth-child(1) { background-color: rgba(255, 183, 197, 0.75); } /* Soft Pink */
+.blob:nth-child(2) { background-color: rgba(173, 216, 230, 0.75); } /* Light Blue */
+.blob:nth-child(3) { background-color: rgba(255, 218, 185, 0.75); } /* Peach */
+.blob:nth-child(4) { background-color: rgba(204, 204, 255, 0.75); } /* Lavender */
+.blob:nth-child(5) { background-color: rgba(188, 240, 194, 0.75); } /* Mint Green */
+.blob:nth-child(6) { background-color: rgba(176, 224, 230, 0.75); } /* Powder Blue */
+.blob:nth-child(7) { background-color: rgba(255, 174, 182, 0.75); } /* Light Coral */
+.blob:nth-child(8) { background-color: rgba(216, 191, 216, 0.75); } /* Thistle */
 
-/* Blob 2 - Light Blue */
-.blob:nth-child(2) {
-  width: 150px;
-  height: 150px;
-  background-color: rgba(6, 146, 233, 0.7);
-  left: 40%;
-  animation-duration: 18s;
-  animation-delay: 2s;
-}
-
-/* Blob 3 - Soft Yellow */
-.blob:nth-child(3) {
-  width: 80px;
-  height: 80px;
-  background-color: rgba(255, 223, 126, 0.7);
-  left: 65%;
-  animation-duration: 20s;
-  animation-delay: 1s;
-}
-
-/* Blob 4 - Light Purple */
-.blob:nth-child(4) {
-  width: 120px;
-  height: 120px;
-  background-color: rgba(188, 143, 255, 0.7);
-  left: 25%;
-  animation-duration: 22s;
-  animation-delay: 4s;
-}
-
-/* Blob 5 - Mint Green */
-.blob:nth-child(5) {
-  width: 90px;
-  height: 90px;
-  background-color: rgba(70, 196, 101, 0.7);
-  left: 50%;
-  animation-duration: 25s;
-  animation-delay: 0s;
-}
-
-/* Blob 6 - Light Cyan */
-.blob:nth-child(6) {
-  width: 130px;
-  height: 130px;
-  background-color: rgba(12, 208, 195, 0.765);
-  left: 75%;
-  animation-duration: 19s;
-  animation-delay: 3s;
-}
-
-/* Blob 7 - Light Pink */
-.blob:nth-child(7) {
-  width: 110px;
-  height: 110px;
-  background-color: rgba(255, 178, 217, 0.7);
-  left: 5%;
-  animation-duration: 21s;
-  animation-delay: 5s;
-}
-
-/* Blob 8 - Pale Orange */
-.blob:nth-child(8) {
-  width: 140px;
-  height: 140px;
-  background-color: rgba(255, 137, 35, 0.7);
-  left: 85%;
-  animation-duration: 23s;
-  animation-delay: 2s;
-}
-
-/* Floating animation */
-@keyframes float {
+/* Smoother floating animations with more keyframes and opacity transitions */
+@keyframes float-up {
   0% {
-    transform: translateY(110%) scale(1);
+    transform: translate(0%, 100%) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(-5%, 80%) scale(0.9);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translate(-10%, 50%) scale(1);
+    opacity: 0.9;
   }
   50% {
-    transform: translateY(30%) scale(1.1);
+    transform: translate(-5%, 25%) scale(1.1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(5%, 0%) scale(1);
+    opacity: 0.9;
+  }
+  90% {
+    transform: translate(10%, -20%) scale(0.9);
+    opacity: 0.5;
   }
   100% {
-    transform: translateY(-30%) scale(1);
+    transform: translate(5%, -40%) scale(0.8);
+    opacity: 0;
   }
 }
 
-/* Add grain texture to entire page */
+@keyframes float-down {
+  0% {
+    transform: translate(0%, -40%) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(5%, -20%) scale(0.9);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translate(10%, 0%) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(5%, 25%) scale(1.1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-5%, 50%) scale(1);
+    opacity: 0.9;
+  }
+  90% {
+    transform: translate(-10%, 80%) scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-5%, 100%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Add subtle grain texture */
 body::after {
   content: '';
   position: fixed;
@@ -518,17 +515,24 @@ body::after {
   height: 100%;
   z-index: 1000;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.02; /* Reduced opacity to be very subtle */
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Make content readable over floating blobs */
-main {
+/* Make sure content is readable */
+header, main, footer {
   position: relative;
-  z-index: 1;
-  background-color: rgba(247, 243, 227, 0.5);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px 0;
+  z-index: 2;
 }
+
+/* Optional: Add more depth with subtle text shadow */
+h1, h2, h3 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Ensure links stand out */
+a {
+  position: relative;
+  z-index: 3;
+}
+
